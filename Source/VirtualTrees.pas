@@ -2359,7 +2359,9 @@ type
     procedure CMHintShowPause(var Message: TCMHintShowPause); message CM_HINTSHOWPAUSE;
     procedure CMMouseEnter(var Message: TMessage); message CM_MOUSEENTER;
     procedure CMMouseLeave(var Message: TMessage); message CM_MOUSELEAVE;
+public
     procedure CMMouseWheel(var Message: TCMMouseWheel); message CM_MOUSEWHEEL;
+private
     procedure CMSysColorChange(var Message: TMessage); message CM_SYSCOLORCHANGE;
     procedure TVMGetItem(var Message: TMessage); message TVM_GETITEM;
     procedure TVMGetItemRect(var Message: TMessage); message TVM_GETITEMRECT;
