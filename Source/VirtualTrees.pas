@@ -20148,10 +20148,7 @@ begin
     FOnGetImageEx(Self, Node, Kind, Column, Ghosted, Index, Result);
   end
   else begin
-    if Kind = ikState then
-      Result := Self.StateImages
-    else
-      Result := Self.Images;
+    Result := nil;
     if Assigned(FOnGetImage) then
       FOnGetImage(Self, Node, Kind, Column, Ghosted, Index);
   end;
