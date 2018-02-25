@@ -1,14 +1,16 @@
 unit VirtualTrees.Actions;
-
+{.$include vtconfig.inc}
 interface
 
 uses
+{$ifdef FPC}
+{$else}
   System.Classes,
   System.Actions,
   Vcl.Controls,
   Vcl.ActnList,
+{$endif}
   VirtualTrees;
-
 type
   TVirtualTreeAction = class(TCustomAction)
   strict private
@@ -219,7 +221,7 @@ procedure TVirtualTreePerItemAction.ExecuteTarget(Target: TObject);
 begin
   DoBeforeExecute();
   try
-    Control.IterateSubtree(nil, Self.fToExecute, nil, fFilter);
+    Control.IterateSubtree(nil, Self.fToExecute, nil, fFilter, true);
   finally
     DoAfterExecute();
   end;
