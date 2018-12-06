@@ -873,6 +873,7 @@ type
   strict protected
     procedure CreateParams(var Params: TCreateParams); override;
     procedure Paint; override;
+    property HintData: TVTHintData read FHintData;
   public
     function CalcHintRect(MaxWidth: TDimension; const AHint: string; AData: Pointer): TRect; override;
     function IsHintMsg(var Msg: TMsg): Boolean; override;
